@@ -17,7 +17,7 @@ export function PropertyListPage() {
   const [editingProperty, setEditingProperty] = useState(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  // 初回表示時に自分が登録した物件の一覧を取得する
+  // 初回表示時に物件の一覧を取得する（登録者に関わらず全件表示）
   useEffect(() => {
     loadProperties()
   }, [])
@@ -122,10 +122,13 @@ export function PropertyListPage() {
               </p>
               <p className="property-area">エリア：{property.area}</p>
               <p className="property-layout">間取り：{property.layout}</p>
-              <div className="property-card-buttons">
-                <button onClick={() => handleEditClick(property)}>編集</button>
-                <button onClick={() => handleDelete(property)}>削除</button>
-              </div>
+              {/* 編集・削除は登録者本人のみ操作できる（RLSでも本人以外は拒否される） */}
+              {property.user_id === user.id && (
+                <div className="property-card-buttons">
+                  <button onClick={() => handleEditClick(property)}>編集</button>
+                  <button onClick={() => handleDelete(property)}>削除</button>
+                </div>
+              )}
             </div>
           ))}
         </div>
