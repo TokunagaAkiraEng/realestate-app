@@ -20,6 +20,10 @@
 - コミットメッセージは変更内容が分かるように簡潔に記載する。
 - GitHubにプッシュする際は `.gitignore` で `node_modules` と `.env` を除外設定すること。
 
+## デプロイ情報
+- 本番URL：https://realestate-app-steel.vercel.app/
+- Supabaseプロジェクト名：realestate-app
+
 ## 禁止事項
 - `rm -rf` コマンドは絶対に実行しない
 - `.env` ファイルを読んだり変更したりしない
