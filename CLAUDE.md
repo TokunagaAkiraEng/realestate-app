@@ -4,7 +4,9 @@
 このプロジェクトは不動産管理Webアプリです。
 
 ## 技術スタック
-- HTML / CSS / JavaScript
+- React + Vite
+- Supabase（認証）
+- react-router-dom
 
 ## コーディング規約
 - コメントは日本語で書く
